@@ -14,21 +14,24 @@ with open("adventofcode/day02.txt") as inpt:
         letter = letters[0]
 
         numletters = 0
-        numtimes = 0
-        while numtimes <= 1:
-            firstright = 0
-            secondright = 0
-            if numtimes == 0:
-                if password[firstnumletters] == letter:
-                    firstright = 1
-            if numtimes == 1:
-                if password[secondnumletters] == letter:
-                    secondright = 1
-                    numtimes = 0
+        firstright = 0
+        secondright = 0
+        
+        
+        if password[firstnumletters] == letter:
+            firstright = 1
             
-            if firstright == 1 and secondright == 1:
-                numright += 1
-                numtimes += 1
+        
+        if password[secondnumletters] == letter:
+            secondright = 1
+            
+        if firstright == 1 or secondright == 1:
+            numright += 1
+        
+        if firstright == 1 and secondright == 1:
+            numright -= 1
+            
+        
 
 
 print(numright)
