@@ -5,8 +5,8 @@ with open("adventofcode/day03.txt") as inpt:
         if line == '........#....#..##..#...#.....#\n':
             continue
         columnnum += 3
-        if columnnum > 30:
-            columnnum -= 33
+        if columnnum >= 31:
+            columnnum -= 31
         if line[columnnum] == '#':
             tree += 1
 
